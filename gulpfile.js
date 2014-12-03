@@ -23,7 +23,7 @@ gulp.task('scripts',function() {
 });
 
 gulp.task('watch',function(){
-  glup.watch(paths.scripts,['scripts']);
+  gulp.watch(paths.scripts,['scripts']);
     
 });
 gulp.task('default',['scripts']);

@@ -3,6 +3,7 @@ var inherits = require('util').inherits;
 var request = require('superagent');
 
 function TaskStore() {
+  this._host = "http://127.0.0.1:3001";
   this._tasks = [];
 
   var typeFromHash = location.hash.slice(1);
@@ -23,33 +24,33 @@ TaskStore.prototype.list = function () {
 
 TaskStore.prototype.create = function (title) {
   request
-    .post('/tasks')
+    .post(this._host+'/tasks')
     .send({title: title})
     .end(this._changeTask.bind(this));
 };
 
 TaskStore.prototype.update = function (task) {
   request
-    .put('/tasks/' + task.id)
+    .put(this._host+'/tasks/' + task.id)
     .send(task)
     .end(this._changeTask.bind(this));
 };
 
 TaskStore.prototype.destroy = function (task) {
   request
-    .del('/tasks/' + task.id)
+    .del(this._host+'/tasks/' + task.id)
     .end(this._changeTask.bind(this));
 }
 
 TaskStore.prototype.clearCompeted = function () {
   request
-    .post('/tasks/clear')
+    .post(this._host+'/tasks/clear')
     .end(this._changeTask.bind(this));
 };
 
 TaskStore.prototype.completeAll = function () {
   request
-    .post('/tasks/complete')
+    .post(this._host+'/tasks/complete')
     .end(this._changeTask.bind(this));
 };
 
@@ -64,7 +65,7 @@ TaskStore.prototype.selectType = function (type) {
 
 TaskStore.prototype._changeTask = function () {
   request
-  .get('/tasks')
+  .get(this._host+'/tasks')
   .end(function (err, res) {
     if (err) {
       console.error(err);
