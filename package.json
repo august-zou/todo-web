@@ -4,7 +4,8 @@
   "description": "this is the front-end of todos use react",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
   },
   "dependencies": {
     "react": "^0.12.1",
-    "express": "^4.10.4"
+    "express": "^4.10.4",
+    "body-parser": "^1.9.3"
   }
 }
