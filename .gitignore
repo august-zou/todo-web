@@ -6,7 +6,8 @@ lib-cov
 *.out
 *.pid
 *.gz
-
+*.~
+*.swp
 pids
 logs
 results
@@ -16,3 +17,5 @@ node_modules
 
 .bundle.js
 coverage
+
+public/dist/**/*

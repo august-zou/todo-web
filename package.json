@@ -1,0 +1,35 @@
+{
+  "name": "todo-web",
+  "version": "0.0.1",
+  "description": "this is the front-end of todos use react",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/august-zou/todo-web.git"
+  },
+  "keywords": [
+    "todos",
+    "react"
+  ],
+  "author": "august-zou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/august-zou/todo-web/issues"
+  },
+  "homepage": "https://github.com/august-zou/todo-web",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "browserify": "^6.3.3",
+    "reactify": "^0.17.1",
+    "del": "^1.0.0",
+    "superagent": "^0.21.0",
+    "vinyl-source-stream": "^1.0.0"
+  },
+  "dependencies": {
+    "react": "^0.12.1",
+    "express": "^4.10.4"
+  }
+}
